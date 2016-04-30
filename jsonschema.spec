@@ -4,7 +4,7 @@
 #
 Name     : jsonschema
 Version  : 2.4.0
-Release  : 14
+Release  : 15
 URL      : https://pypi.python.org/packages/source/j/jsonschema/jsonschema-2.4.0.tar.gz
 Source0  : https://pypi.python.org/packages/source/j/jsonschema/jsonschema-2.4.0.tar.gz
 Summary  : An implementation of JSON Schema validation for Python
