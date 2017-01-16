@@ -4,7 +4,7 @@
 #
 Name     : jsonschema
 Version  : 2.4.0
-Release  : 17
+Release  : 18
 URL      : https://pypi.python.org/packages/source/j/jsonschema/jsonschema-2.4.0.tar.gz
 Source0  : https://pypi.python.org/packages/source/j/jsonschema/jsonschema-2.4.0.tar.gz
 Summary  : An implementation of JSON Schema validation for Python
@@ -48,6 +48,8 @@ python components for the jsonschema package.
 %setup -q -n jsonschema-2.4.0
 
 %build
+export LANG=C
+export SOURCE_DATE_EPOCH=1484550990
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
@@ -57,9 +59,10 @@ export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 py.test-2.7 || :
 %install
+export SOURCE_DATE_EPOCH=1484550990
 rm -rf %{buildroot}
-python2 setup.py build -b py2 install --root=%{buildroot}
-python3 setup.py build -b py3 install --root=%{buildroot}
+python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
+python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
 
 %files
 %defattr(-,root,root,-)
