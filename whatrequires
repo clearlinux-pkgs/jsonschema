@@ -1,0 +1,5 @@
+# This file contains recursive sources that require this package
+jupyter
+jupyter-notebook-gist
+nbformat
+notebook
