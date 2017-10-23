@@ -1,3 +1,0 @@
-# openstack Liberty needs version >= 2.0.0 < 3.0.0 !=2.5.0
-# for more information check https://github.com/openstack/requirements/blob/master/global-requirements.txt
-watchurl=https://pypi.python.org/simple/jsonschema/ ../..//packages/source/j/jsonschema/jsonschema-(2[\d\.]*).tar.gz
