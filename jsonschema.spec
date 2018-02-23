@@ -4,14 +4,13 @@
 #
 Name     : jsonschema
 Version  : 2.6.0
-Release  : 26
+Release  : 27
 URL      : http://pypi.debian.net/jsonschema/jsonschema-2.6.0.tar.gz
 Source0  : http://pypi.debian.net/jsonschema/jsonschema-2.6.0.tar.gz
 Summary  : An implementation of JSON Schema validation for Python
 Group    : Development/Tools
 License  : MIT
 Requires: jsonschema-bin
-Requires: jsonschema-legacypython
 Requires: jsonschema-python3
 Requires: jsonschema-python
 Requires: functools32
@@ -54,7 +53,6 @@ legacypython components for the jsonschema package.
 %package python
 Summary: python components for the jsonschema package.
 Group: Default
-Requires: jsonschema-legacypython
 Requires: jsonschema-python3
 
 %description python
@@ -78,7 +76,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1507155584
+export SOURCE_DATE_EPOCH=1519350468
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
@@ -88,7 +86,7 @@ export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 py.test-2.7 || :
 %install
-export SOURCE_DATE_EPOCH=1507155584
+export SOURCE_DATE_EPOCH=1519350468
 rm -rf %{buildroot}
 python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
 python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
