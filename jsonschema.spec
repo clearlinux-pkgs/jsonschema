@@ -4,7 +4,7 @@
 #
 Name     : jsonschema
 Version  : 2.6.0
-Release  : 33
+Release  : 34
 URL      : http://pypi.debian.net/jsonschema/jsonschema-2.6.0.tar.gz
 Source0  : http://pypi.debian.net/jsonschema/jsonschema-2.6.0.tar.gz
 Summary  : An implementation of JSON Schema validation for Python
