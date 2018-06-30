@@ -4,7 +4,7 @@
 #
 Name     : jsonschema
 Version  : 2.6.0
-Release  : 34
+Release  : 35
 URL      : http://pypi.debian.net/jsonschema/jsonschema-2.6.0.tar.gz
 Source0  : http://pypi.debian.net/jsonschema/jsonschema-2.6.0.tar.gz
 Summary  : An implementation of JSON Schema validation for Python
@@ -12,12 +12,12 @@ Group    : Development/Tools
 License  : MIT
 Requires: jsonschema-bin
 Requires: jsonschema-python3
+Requires: jsonschema-license
 Requires: jsonschema-python
 Requires: webcolors
 BuildRequires : funcsigs
 BuildRequires : pbr
 BuildRequires : pip
-
 BuildRequires : python-mock
 BuildRequires : python3-dev
 BuildRequires : setuptools
@@ -35,9 +35,18 @@ BuildRequires : vcversioner
 %package bin
 Summary: bin components for the jsonschema package.
 Group: Binaries
+Requires: jsonschema-license
 
 %description bin
 bin components for the jsonschema package.
+
+
+%package license
+Summary: license components for the jsonschema package.
+Group: Default
+
+%description license
+license components for the jsonschema package.
 
 
 %package python
@@ -66,7 +75,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1526505479
+export SOURCE_DATE_EPOCH=1530374909
 python3 setup.py build -b py3
 
 %check
@@ -76,6 +85,9 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 py.test-2.7 || :
 %install
 rm -rf %{buildroot}
+mkdir -p %{buildroot}/usr/share/doc/jsonschema
+cp COPYING %{buildroot}/usr/share/doc/jsonschema/COPYING
+cp json/LICENSE %{buildroot}/usr/share/doc/jsonschema/json_LICENSE
 python3 -tt setup.py build -b py3 install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
@@ -87,6 +99,11 @@ echo ----[ mark ]----
 %files bin
 %defattr(-,root,root,-)
 /usr/bin/jsonschema
+
+%files license
+%defattr(-,root,root,-)
+/usr/share/doc/jsonschema/COPYING
+/usr/share/doc/jsonschema/json_LICENSE
 
 %files python
 %defattr(-,root,root,-)
