@@ -4,7 +4,7 @@
 #
 Name     : jsonschema
 Version  : 3.0.0
-Release  : 43
+Release  : 44
 URL      : https://files.pythonhosted.org/packages/3c/2b/023b74977d7db41b5768153e426803716f632897ab5e7babdf9c120f3283/jsonschema-3.0.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/3c/2b/023b74977d7db41b5768153e426803716f632897ab5e7babdf9c120f3283/jsonschema-3.0.0.tar.gz
 Summary  : An implementation of JSON Schema validation for Python
@@ -14,12 +14,9 @@ Requires: jsonschema-bin = %{version}-%{release}
 Requires: jsonschema-license = %{version}-%{release}
 Requires: jsonschema-python = %{version}-%{release}
 Requires: jsonschema-python3 = %{version}-%{release}
-Requires: Sphinx
 Requires: attrs
-Requires: certifi
 Requires: idna
 Requires: jsonpointer
-Requires: lxml
 Requires: pyrsistent
 Requires: setuptools
 Requires: six
@@ -82,7 +79,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1551025381
+export SOURCE_DATE_EPOCH=1551026890
 export MAKEFLAGS=%{?_smp_mflags}
 python3 setup.py build
 
