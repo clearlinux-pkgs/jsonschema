@@ -1,5 +1,5 @@
 PKG_NAME := jsonschema
-URL = https://files.pythonhosted.org/packages/3c/2b/023b74977d7db41b5768153e426803716f632897ab5e7babdf9c120f3283/jsonschema-3.0.0.tar.gz
+URL = https://files.pythonhosted.org/packages/1f/7f/a020327823b9c405ee6f85ab3053ff171e10801b19cfe55c78bb0b3810e7/jsonschema-3.0.1.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
