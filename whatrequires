@@ -1,6 +1,17 @@
 # This file contains recursive sources that require this package
+barbican
+botocore
+cinder
+deprecated-warlock
 docker-compose
+glance
+glance_store
+ironic
 jupyterlab_launcher
 jupyterlab_server
 nbformat
+nova
+python-troveclient
+taskflow
+tempest
 warlock
