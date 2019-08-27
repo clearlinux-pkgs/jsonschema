@@ -4,7 +4,7 @@
 #
 Name     : jsonschema
 Version  : 3.0.2
-Release  : 49
+Release  : 50
 URL      : https://files.pythonhosted.org/packages/92/d2/8768983d6e4bb1478ea08e7bc186304f47b99c22bfd711caa8e9becb0361/jsonschema-3.0.2.tar.gz
 Source0  : https://files.pythonhosted.org/packages/92/d2/8768983d6e4bb1478ea08e7bc186304f47b99c22bfd711caa8e9becb0361/jsonschema-3.0.2.tar.gz
 Summary  : An implementation of JSON Schema validation for Python
