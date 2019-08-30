@@ -2,6 +2,7 @@
 barbican
 botocore
 cinder
+cve-bin-tool
 deprecated-warlock
 docker-compose
 glance
@@ -9,9 +10,12 @@ glance_store
 ironic
 jupyterlab_launcher
 jupyterlab_server
+keystone
 nbformat
 nova
+python-designateclient
 python-troveclient
+sahara
 taskflow
 tempest
 warlock
