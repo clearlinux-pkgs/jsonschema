@@ -3,7 +3,6 @@ barbican
 botocore
 cinder
 cve-bin-tool
-deprecated-warlock
 docker-compose
 glance
 glance_store
@@ -15,6 +14,7 @@ nbformat
 nova
 python-designateclient
 python-troveclient
+python-zaqarclient
 sahara
 taskflow
 tempest
