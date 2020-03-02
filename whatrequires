@@ -18,4 +18,6 @@ python-zaqarclient
 sahara
 taskflow
 tempest
+tempest-lib
 warlock
+zVMCloudConnector
