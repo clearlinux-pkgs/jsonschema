@@ -1,21 +1,16 @@
 # This file contains recursive sources that require this package
-barbican
 botocore
 cinder
 cve-bin-tool
 docker-compose
-glance
 glance_store
 ironic
 jupyterlab_launcher
 jupyterlab_server
 keystone
 nbformat
-nova
 python-designateclient
-python-troveclient
 python-zaqarclient
-sahara
 taskflow
 tempest
 tempest-lib

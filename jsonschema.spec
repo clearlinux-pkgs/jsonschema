@@ -4,7 +4,7 @@
 #
 Name     : jsonschema
 Version  : 3.2.0
-Release  : 58
+Release  : 59
 URL      : https://files.pythonhosted.org/packages/69/11/a69e2a3c01b324a77d3a7c0570faa372e8448b666300c4117a516f8b1212/jsonschema-3.2.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/69/11/a69e2a3c01b324a77d3a7c0570faa372e8448b666300c4117a516f8b1212/jsonschema-3.2.0.tar.gz
 Summary  : An implementation of JSON Schema validation for Python
@@ -37,185 +37,10 @@ BuildRequires : six
 BuildRequires : webcolors
 
 %description
-==========
 jsonschema
-==========
-
-|PyPI| |Pythons| |Travis| |AppVeyor| |Codecov| |ReadTheDocs|
-
-.. |PyPI| image:: https://img.shields.io/pypi/v/jsonschema.svg
-   :alt: PyPI version
-   :target: https://pypi.org/project/jsonschema/
-
-.. |Pythons| image:: https://img.shields.io/pypi/pyversions/jsonschema.svg
-   :alt: Supported Python versions
-   :target: https://pypi.org/project/jsonschema/
-
-.. |Travis| image:: https://travis-ci.com/Julian/jsonschema.svg?branch=master
-   :alt: Travis build status
-   :target: https://travis-ci.com/Julian/jsonschema
-
-.. |AppVeyor| image:: https://ci.appveyor.com/api/projects/status/adtt0aiaihy6muyn/branch/master?svg=true
-   :alt: AppVeyor build status
-   :target: https://ci.appveyor.com/project/Julian/jsonschema
-
-.. |Codecov| image:: https://codecov.io/gh/Julian/jsonschema/branch/master/graph/badge.svg
-   :alt: Codecov Code coverage
-   :target: https://codecov.io/gh/Julian/jsonschema
-
-.. |ReadTheDocs| image:: https://readthedocs.org/projects/python-jsonschema/badge/?version=stable&style=flat
-   :alt: ReadTheDocs status
-   :target: https://python-jsonschema.readthedocs.io/en/stable/
-
-
-``jsonschema`` is an implementation of `JSON Schema <https://json-schema.org>`_
-for Python (supporting 2.7+ including Python 3).
-
-.. code-block:: python
-
-    >>> from jsonschema import validate
-
-    >>> # A sample schema, like what we'd get from json.load()
-    >>> schema = {
-    ...     "type" : "object",
-    ...     "properties" : {
-    ...         "price" : {"type" : "number"},
-    ...         "name" : {"type" : "string"},
-    ...     },
-    ... }
-
-    >>> # If no exception is raised by validate(), the instance is valid.
-    >>> validate(instance={"name" : "Eggs", "price" : 34.99}, schema=schema)
-
-    >>> validate(
-    ...     instance={"name" : "Eggs", "price" : "Invalid"}, schema=schema,
-    ... )                                   # doctest: +IGNORE_EXCEPTION_DETAIL
-    Traceback (most recent call last):
-        ...
-    ValidationError: 'Invalid' is not of type 'number'
-
-It can also be used from console:
-
-.. code-block:: bash
-
-    $ jsonschema -i sample.json sample.schema
-
-Features
---------
-
-* Full support for
-  `Draft 7 <https://python-jsonschema.readthedocs.io/en/latest/validate/#jsonschema.Draft7Validator>`_,
-  `Draft 6 <https://python-jsonschema.readthedocs.io/en/latest/validate/#jsonschema.Draft6Validator>`_,
-  `Draft 4 <https://python-jsonschema.readthedocs.io/en/latest/validate/#jsonschema.Draft4Validator>`_
-  and
-  `Draft 3 <https://python-jsonschema.readthedocs.io/en/latest/validate/#jsonschema.Draft3Validator>`_
-
-* `Lazy validation <https://python-jsonschema.readthedocs.io/en/latest/validate/#jsonschema.IValidator.iter_errors>`_
-  that can iteratively report *all* validation errors.
-
-* `Programmatic querying <https://python-jsonschema.readthedocs.io/en/latest/errors/>`_
-  of which properties or items failed validation.
-
-
-Installation
-------------
-
-``jsonschema`` is available on `PyPI <https://pypi.org/project/jsonschema/>`_. You can install using `pip <https://pip.pypa.io/en/stable/>`_:
-
-.. code-block:: bash
-
-    $ pip install jsonschema
-
-
-Demo
-----
-
-Try ``jsonschema`` interactively in this online demo:
-
-.. image:: https://user-images.githubusercontent.com/1155573/56745335-8b158a00-6750-11e9-8776-83fa675939c4.png
-    :target: https://notebooks.ai/demo/gh/Julian/jsonschema
-    :alt: Open Live Demo
-
-
-Online demo Notebook will look similar to this:
-
-
-.. image:: https://user-images.githubusercontent.com/1155573/56820861-5c1c1880-6823-11e9-802a-ce01c5ec574f.gif
-    :alt: Open Live Demo
-    :width: 480 px
-
-
-Release Notes
--------------
-
-v3.1 brings support for ECMA 262 dialect regular expressions
-throughout schemas, as recommended by the specification. Big
-thanks to @Zac-HD for authoring support in a new `js-regex
-<https://pypi.org/project/js-regex/>`_ library.
-
-
-Running the Test Suite
-----------------------
-
-If you have ``tox`` installed (perhaps via ``pip install tox`` or your
-package manager), running ``tox`` in the directory of your source
-checkout will run ``jsonschema``'s test suite on all of the versions
-of Python ``jsonschema`` supports. If you don't have all of the
-versions that ``jsonschema`` is tested under, you'll likely want to run
-using ``tox``'s ``--skip-missing-interpreters`` option.
-
-Of course you're also free to just run the tests on a single version with your
-favorite test runner. The tests live in the ``jsonschema.tests`` package.
-
-
-Benchmarks
-----------
-
-``jsonschema``'s benchmarks make use of `pyperf
-<https://pyperf.readthedocs.io>`_.
-
-Running them can be done via ``tox -e perf``, or by invoking the ``pyperf``
-commands externally (after ensuring that both it and ``jsonschema`` itself are
-installed)::
-
-    $ python -m pyperf jsonschema/benchmarks/test_suite.py --hist --output results.json
-
-To compare to a previous run, use::
-
-    $ python -m pyperf compare_to --table reference.json results.json
-
-See the ``pyperf`` documentation for more details.
-
-
-Community
----------
-
-There's a `mailing list <https://groups.google.com/forum/#!forum/jsonschema>`_
-for this implementation on Google Groups.
-
-Please join, and feel free to send questions there.
-
-
-Contributing
-------------
-
-I'm Julian Berman.
-
-``jsonschema`` is on `GitHub <https://github.com/Julian/jsonschema>`_.
-
-Get in touch, via GitHub or otherwise, if you've got something to contribute,
-it'd be most welcome!
-
-You can also generally find me on Freenode (nick: ``tos9``) in various
-channels, including ``#python``.
-
-If you feel overwhelmingly grateful, you can also woo me with beer money
-via Google Pay with the email in my GitHub profile.
-
-And for companies who appreciate ``jsonschema`` and its continued support
-and growth, ``jsonschema`` is also now supportable via `TideLift
-<https://tidelift.com/subscription/pkg/pypi-jsonschema?utm_source=pypi-j
-sonschema&utm_medium=referral&utm_campaign=readme>`_.
+        ==========
+        
+        |PyPI| |Pythons| |Travis| |AppVeyor| |Codecov| |ReadTheDocs|
 
 %package bin
 Summary: bin components for the jsonschema package.
@@ -248,6 +73,10 @@ Summary: python3 components for the jsonschema package.
 Group: Default
 Requires: python3-core
 Provides: pypi(jsonschema)
+Requires: pypi(setuptools)
+Requires: pypi(attrs)
+Requires: pypi(pyrsistent)
+Requires: pypi(six)
 
 %description python3
 python3 components for the jsonschema package.
@@ -262,8 +91,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1583162348
-# -Werror is for werrorists
+export SOURCE_DATE_EPOCH=1585700146
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
