@@ -4,7 +4,7 @@
 #
 Name     : jsonschema
 Version  : 3.2.0
-Release  : 69
+Release  : 70
 URL      : https://files.pythonhosted.org/packages/69/11/a69e2a3c01b324a77d3a7c0570faa372e8448b666300c4117a516f8b1212/jsonschema-3.2.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/69/11/a69e2a3c01b324a77d3a7c0570faa372e8448b666300c4117a516f8b1212/jsonschema-3.2.0.tar.gz
 Summary  : An implementation of JSON Schema validation for Python
@@ -29,10 +29,10 @@ BuildRequires : funcsigs
 BuildRequires : idna
 BuildRequires : jsonpointer
 BuildRequires : pyrsistent
+BuildRequires : pytest
 BuildRequires : python-mock
 BuildRequires : rfc3987
 BuildRequires : setuptools
-BuildRequires : setuptools_scm-python
 BuildRequires : six
 BuildRequires : webcolors
 
@@ -73,9 +73,9 @@ Summary: python3 components for the jsonschema package.
 Group: Default
 Requires: python3-core
 Provides: pypi(jsonschema)
-Requires: pypi(setuptools)
 Requires: pypi(attrs)
 Requires: pypi(pyrsistent)
+Requires: pypi(setuptools)
 Requires: pypi(six)
 
 %description python3
@@ -91,15 +91,15 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1585700146
+export SOURCE_DATE_EPOCH=1633196567
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
-export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FCFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
-export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
+export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=auto "
+export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
+export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
+export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=auto "
 export MAKEFLAGS=%{?_smp_mflags}
 python3 setup.py build
 
@@ -107,7 +107,7 @@ python3 setup.py build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-py.test-2.7 || :
+pytest || :
 %install
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}

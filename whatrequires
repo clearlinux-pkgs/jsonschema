@@ -1,18 +1,8 @@
 # This file contains recursive sources that require this package
-botocore
-cinder
+ansible
 cve-bin-tool
 docker-compose
-glance_store
-ironic
 jupyterlab_launcher
 jupyterlab_server
-keystone
 nbformat
-python-designateclient
-python-zaqarclient
-taskflow
-tempest
-tempest-lib
-warlock
-zVMCloudConnector
+spyder-ide
