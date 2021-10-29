@@ -1,5 +1,6 @@
 # This file contains recursive sources that require this package
 ansible
+botocore
 cve-bin-tool
 docker-compose
 jupyterlab_launcher
