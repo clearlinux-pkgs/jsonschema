@@ -6,4 +6,3 @@ docker-compose
 jupyterlab_launcher
 jupyterlab_server
 nbformat
-spyder-ide
