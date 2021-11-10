@@ -4,7 +4,7 @@
 #
 Name     : jsonschema
 Version  : 4.2.1
-Release  : 72
+Release  : 73
 URL      : https://files.pythonhosted.org/packages/ff/09/fa40d16ddcce69fc79e264c9458ac5ae693586d5f4c552e1e11889bdf971/jsonschema-4.2.1.tar.gz
 Source0  : https://files.pythonhosted.org/packages/ff/09/fa40d16ddcce69fc79e264c9458ac5ae693586d5f4c552e1e11889bdf971/jsonschema-4.2.1.tar.gz
 Summary  : An implementation of JSON Schema validation for Python
@@ -71,6 +71,9 @@ python components for the jsonschema package.
 Summary: python3 components for the jsonschema package.
 Group: Default
 Requires: python3-core
+Provides: pypi(jsonschema)
+Requires: pypi(attrs)
+Requires: pypi(pyrsistent)
 Requires: pypi(setuptools)
 Requires: pypi(six)
 
@@ -87,7 +90,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1636524966
+export SOURCE_DATE_EPOCH=1636526940
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
